@@ -63,6 +63,3 @@ rails_admin
 cancancan
 kaminari
 ransack
-# chat
-# chat
-# chat

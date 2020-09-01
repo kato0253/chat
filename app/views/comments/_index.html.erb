@@ -3,9 +3,9 @@
   <% comments.each do |comment| %>
   <div>
     <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
+    <% if comment.id.present? && comment.user_id == current_user.id %>
     <p>コメント：<%= comment.content %></p>
     <p>投稿者：<%= comment.article.user.name %></p>
-    <% if comment.id.present? && comment.user_id == current_user.id %>
     <div id="errors_area_<%= comment.id %>">
     <%= render partial: 'comments/edit_error' %>
     </div>

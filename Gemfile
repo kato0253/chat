@@ -14,6 +14,8 @@ gem 'kaminari'
 gem 'ransack'
 gem 'jquery-rails'
 gem "factory_bot_rails"
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 # Use postgresql as the database for Active Record
