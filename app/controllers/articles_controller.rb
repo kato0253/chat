@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all.page(params[:page]).per(4)
     @q = Article.ransack(params[:q])
     @articles = @q.result(distinct: true).page(params[:page]).per(4)
+    # @user = User.find(params[:user_id])
   end
 
 
@@ -35,7 +36,8 @@ class ArticlesController < ApplicationController
     # @comment = Comment.new(article_params)
     # @comment.user_id = current_user.id
     @count = Favorite.where(article_id: @article.id).count
-    @user = current_user
+    # @user = current_user
+    # @user = User.find(params[:user_id])
   end
 
   def edit

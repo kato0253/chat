@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   def create
     # Articleをパラメータの値から探し出し,Articleに紐づくcommentsとしてbuildします。
     @article = Article.find(params[:article_id])
+    # @user = User.find(params[:user_id])
     #Articleモデル内の、:article_idパラムスを見つけて@article変数に入れる
     @comment = @article.comments.build(comment_params)
     @comment.user_id = current_user.id
@@ -17,6 +18,10 @@ class CommentsController < ApplicationController
           format.js { render :index }
         end
     end
+  end
+  def index
+    @user = User.find(params[:user_id])
+
   end
   def edit
     @comment = @article.comments.find(params[:id])
